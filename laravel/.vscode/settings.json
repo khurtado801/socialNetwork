@@ -13,5 +13,9 @@
                         "password": "Opt1pl3x#",
                         "database": "mysql"
                 }
+        ],
+        "cSpell.words": [
+                "endsection",
+                "mailtrap"
         ]
 }
