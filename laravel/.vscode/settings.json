@@ -9,16 +9,9 @@
                         "port": 3306,
                         "driver": "MySQL",
                         "name": "MySQL",
+                        "database": "socialnetwork",
                         "username": "root",
-                        "password": "Opt1pl3x#",
-                        "database": "mysql"
+                        "password": "Opt1pl3x#"
                 }
-        ],
-        "cSpell.words": [
-                "csrf",
-                "endsection",
-                "mailtrap",
-                "signin",
-                "xsrf"
         ]
 }
