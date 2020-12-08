@@ -1,10 +1,13 @@
 <?php
+
 namespace App\Http\Controllers;
 
-use App\User;
 use Illuminate\Http\Request;
+use App\User;
 
-class UserController extends Controller {
+class userController extends Controller
+{
+    // Signup post request
     public function postSignUp(Request $request) {
         $email = $request['email'];
         $first_name = $request['first_name'];
@@ -20,8 +23,8 @@ class UserController extends Controller {
         return redirect()->back();
     }
 
+    // Signin post request
     public function postSIgnIn(Request $request) {
 
     }
-
 }

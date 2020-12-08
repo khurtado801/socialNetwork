@@ -15,7 +15,10 @@
                 }
         ],
         "cSpell.words": [
+                "csrf",
                 "endsection",
-                "mailtrap"
+                "mailtrap",
+                "signin",
+                "xsrf"
         ]
 }
