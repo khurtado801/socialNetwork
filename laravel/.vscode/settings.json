@@ -8,10 +8,22 @@
                         "server": "localhost",
                         "port": 3306,
                         "driver": "MySQL",
-                        "name": "MySQL",
-                        "database": "socialnetwork",
+                        "name": "mysql",
+                        "database": "mysocialnetwork",
                         "username": "root",
                         "password": "Opt1pl3x#"
                 }
+        ],
+        "cSpell.words": [
+                "createpost",
+                "csrf",
+                "endsection",
+                "laravel",
+                "laravel's",
+                "mailtrap",
+                "mysocialnetwork",
+                "signin",
+                "upateaccount",
+                "userimage"
         ]
 }
