@@ -12,12 +12,14 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use InvalidArgumentException;
 
+$var = 'const switchers = [...document.querySelectorAll(\'.switcher\')]';
+
+
 class UserController extends Controller
 {
+
     // NOTE: Both postSignUp and postSignIn will receive a request object.
     // NOTE: Because we click on our button and then a request is sent to our server and is handled by Laravel.
-
-
 
       /**
        * Both postSignUp and postSignIn will receive a request object.
@@ -25,7 +27,7 @@ class UserController extends Controller
        * And we will soon, in our routes.php file, hook up our functions, our methods that we are writing
        * at the moment to the to the responding request from our form.
        * As these are post requests, we will have our parameters in the request body. Therefore we need to access the request.
-       * We access the request using Laravels dependency injection which is very powerful.
+       * We access the request using Laravel's dependency injection which is very powerful.
        * We have to specify the object you want to inject. So the type object. In our case the object type will be of type Request.
        * And it lives in Illuminate\Http\Request namespace.
        */
@@ -137,4 +139,30 @@ class UserController extends Controller
         $file = Storage::disk('local')->get($filename);
         return new Response($file, 200);
     }
+
+    public function console_log($output, $with_script_tags = true) {
+        $js_code = 'console.log(' . json_encode($output, JSON_HEX_TAG) .
+    ');';
+        if ($with_script_tags) {
+            $js_code = '<script>' . $js_code . '</script>';
+        }
+        echo $js_code;
+    }
+
+
+    // NOTE: Switch forms
+    protected $listeners = ['switchForm' => 'switchFormView'];
+
+    // public function switchFormView( $var)
+    // {
+    //     switchers.forEach(item => {
+    //         item.addEventListener(\'click\', function() {
+    //             switchers.forEach(item => item.parentElement.classList.remove(\'is-active\'))
+    //             this.parentElement.classList.add(\'is-active\')
+    //         })
+    //     })
+    // }
+
+
+
 }

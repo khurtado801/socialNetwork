@@ -15,14 +15,19 @@
                 }
         ],
         "cSpell.words": [
+                "authenticatable",
                 "createpost",
                 "csrf",
+                "endforeach",
                 "endsection",
+                "htmlinput",
                 "laravel",
                 "laravel's",
                 "mailtrap",
                 "mysocialnetwork",
+                "postid",
                 "signin",
+                "signup",
                 "upateaccount",
                 "userimage"
         ]

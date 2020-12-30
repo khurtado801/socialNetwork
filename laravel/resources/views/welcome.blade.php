@@ -6,40 +6,50 @@
 
 @section('content')
     @include('includes.message-block')
-    <div class="row">
-        <div class="col-sm-6">
-            <h3>Sign Up</h3>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="registration-form">
             <form action="{{ route('signup') }}" method="post">
-                <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
-                    <label for="email">Your E-Mail</label>
-                    <input class="form-control" type="text" name="email" id="email" value="{{ Request::old('email') }}">
+
+                <div class="row">
+                    <div class="col-sm-6 float-left">
+                        <div class="mx-auto ">
+                            <h3>Sign Up</h3>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 float-right">
+                        <div class="mx-auto ">
+                            <h3><a href="#" class="signup-image-link">I am already member</a></h3>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="form-icon">
+                    <span><i class="icon icon-user"></i></span>
+                </div>
+                <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
+                    <input class="form-control item" type="text" name="email" id="email"
+                        value="{{ Request::old('email') }}" placeholder="Email">
+                </div>
+
                 <div class="form-group {{ $errors->has('first_name') ? 'has-error' : '' }}">
-                    <label for="first_name">Your First Name</label>
-                    <input class="form-control" type="text" name="first_name" id="first_name" value="{{ Request::old('first_name') }}">
+                    <input class="form-control item" type="text" name="first_name" id="first_name"
+                        value="{{ Request::old('first_name') }}" placeholder="First Name">
                 </div>
+
                 <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
-                    <label for="password">Your Password</label>
-                    <input class="form-control" type="password" name="password" id="password" value="{{ Request::old('password') }}">
+                    <input class="form-control item" type="password" name="password" id="password"
+                        value="{{ Request::old('password') }}" placeholder="Password">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+
+                <button type="submit" class="btn btn-block create-account">Submit</button>
                 <input type="hidden" name="_token" value="{{ Session::token() }}">
             </form>
-        </div>
-        <div class="col-sm-6">
-            <h3>Sign In</h3>
-            <form action="{{ route('signin') }}" method="post">
-                <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
-                    <label for="email">Your E-Mail</label>
-                    <input class="form-control" type="text" name="email" id="email" value="{{ Request::old('email') }}">
-                </div>
-                <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
-                    <label for="password">Your Password</label>
-                    <input class="form-control" type="password" name="password" id="password" value="{{ Request::old('password') }}">
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <input type="hidden" name="_token" value="{{ Session::token() }}">
-            </form>
+
+            <div class="social-media">
+            </div>
+
         </div>
     </div>
+</div>
 @endsection
