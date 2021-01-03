@@ -1,4 +1,4 @@
- @extends('layouts.master')
+@extends('layouts.master')
 
 @section('title')
     Welcome!
@@ -6,12 +6,12 @@
 
 @section('content')
     @include('includes.message-block')
-<div class="row">
+    <div class="row">
     <div class="col-sm-12">
         <div class="registration-form">
-            <form action="{{ route('signup') }}" method="post">
+            <form action="{{ route('signin') }}" method="post">
 
-                <div class="row">
+            <div class="row">
                     <div class="col-sm-6 float-left">
                         <div class="mx-auto ">
                             <h3>Sign Up</h3>
@@ -19,7 +19,7 @@
                     </div>
                     <div class="col-sm-6 float-right">
                         <div class="mx-auto ">
-                            <h3><a href="{{ route('login') }}" class="signup-image-link">I am already member</a></h3>
+                            <h3><a href="{{ route('dashboard') }}" class="signup-image-link">I need to register</a></h3>
                         </div>
                     </div>
                 </div>
@@ -32,10 +32,6 @@
                         value="{{ Request::old('email') }}" placeholder="Email">
                 </div>
 
-                <div class="form-group {{ $errors->has('first_name') ? 'has-error' : '' }}">
-                    <input class="form-control item" type="text" name="first_name" id="first_name"
-                        value="{{ Request::old('first_name') }}" placeholder="First Name">
-                </div>
 
                 <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
                     <input class="form-control item" type="password" name="password" id="password"
@@ -52,4 +48,5 @@
         </div>
     </div>
 </div>
+
 @endsection

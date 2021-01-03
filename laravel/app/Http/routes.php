@@ -28,6 +28,10 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
+
 // NOTE: Post route called /signup, this is what will be displayed in the URL, and pass array as second argument
 Route::post('/signup', [
     // NOTE: We first specify the uses key in array, with the controller it should be using and then @postSignUp function which is executed when we hit the /signup request

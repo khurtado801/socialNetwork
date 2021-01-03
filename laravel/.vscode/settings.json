@@ -18,6 +18,7 @@
                 "authenticatable",
                 "createpost",
                 "csrf",
+                "cufon",
                 "endforeach",
                 "endsection",
                 "htmlinput",

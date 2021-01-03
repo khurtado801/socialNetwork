@@ -83,8 +83,12 @@ class UserController extends Controller
             'email' => 'required',
             'password' => 'required'
         ]);
+        printf("%s", $request);
+        echo $request;
 
         if (Auth::attempt(['email' => $request['email'], 'password' => $request['password']])) {
+            print_r($request['email']);
+            sessionStorage.userdata = $request;
             return redirect()->route('dashboard');
         }
         return redirect()->back();
